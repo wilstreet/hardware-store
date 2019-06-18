@@ -1,0 +1,8 @@
+ion-content{/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+7,ff2a00+38,ff2a00+93,ff2a00+99&0.51+1,1+6,0.77+92,0.77+92,0.2+100 */
+    --background: -moz-linear-gradient(top,  rgba(0,0,0,0.51) 1%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 7%, rgba(255,42,0,0.92) 38%, rgba(255,42,0,0.77) 92%, rgba(255,42,0,0.7) 93%, rgba(255,42,0,0.27) 99%, rgba(255,42,0,0.2) 100%); /* FF3.6-15 */
+    --background: -webkit-linear-gradient(top,  rgba(0,0,0,0.51) 1%,rgba(0,0,0,1) 6%,rgba(0,0,0,1) 7%,rgba(255,42,0,0.92) 38%,rgba(255,42,0,0.77) 92%,rgba(255,42,0,0.7) 93%,rgba(255,42,0,0.27) 99%,rgba(255,42,0,0.2) 100%); /* Chrome10-25,Safari5.1-6 */
+    --background: linear-gradient(to bottom,  rgba(0,0,0,0.51) 1%,rgba(0,0,0,1) 6%,rgba(0,0,0,1) 7%,rgba(255,42,0,0.92) 38%,rgba(255,42,0,0.77) 92%,rgba(255,42,0,0.7) 93%,rgba(255,42,0,0.27) 99%,rgba(255,42,0,0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82000000', endColorstr='#33ff2a00',GradientType=0 ); /* IE6-9 */;
+--padding-top: 80%;
+ }
+ 

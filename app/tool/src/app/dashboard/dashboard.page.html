@@ -1,0 +1,25 @@
+<ion-content padding>
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        
+¡Bienvenido a TOOL!
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        Su ID de correo electrónico registrado: {{userEmail}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+
+  <ion-button expand="full"shape="round"color="dark"[routerLink]="['/usuario']" routerLinkActive="router-link-active"><ion-title color="danger">CONTINUAR</ion-title></ion-button>
+  
+  
+</ion-content>
+<ion-footer (click)="logout()" >
+  <ion-toolbar color="dark" >
+    <ion-title color="danger">Cerrar sesión</ion-title>
+  </ion-toolbar>
+</ion-footer>

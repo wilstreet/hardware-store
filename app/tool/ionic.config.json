@@ -1,0 +1,7 @@
+{
+  "name": "tool",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
