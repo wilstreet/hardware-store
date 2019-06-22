@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
-import { Tool, CrudService } from '../crud.service';
+import { Tool, CrudService } from '../services/crud.service';
 import { ActivatedRoute } from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular'
 
@@ -12,14 +12,14 @@ import { NavController, LoadingController } from '@ionic/angular'
 export class ElementoPage implements OnInit {
 
   tool: Tool = {
-    task: 'test',
+    task: '¿Que deseas?',
     createdAt: new Date().getTime(),
-    priority: 2
+    priority: 'dirección'
   };
  
   toolId = null;
 
-  constructor(public actionSheetController: ActionSheetController,private route: ActivatedRoute, private nav: NavController, private toolService: CrudService, private loadingController: LoadingController ) { }
+  constructor(public actionSheetController: ActionSheetController,public route: ActivatedRoute, public nav: NavController, public toolService: CrudService, public loadingController: LoadingController ) { }
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
@@ -92,12 +92,12 @@ export class ElementoPage implements OnInit {
     if (this.toolId) {
       this.toolService.updateTool(this.tool, this.toolId).then(() => {
         loading.dismiss();
-        // this.nav.goBack('home');
+        this.nav.goBack('home');
       });
     } else {
       this.toolService.addTool(this.tool).then(() => {
         loading.dismiss();
-        // this.nav.goBack('home');
+        this.nav.goBack('home');
       });
     }
   }

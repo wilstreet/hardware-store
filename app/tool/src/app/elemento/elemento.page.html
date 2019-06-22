@@ -17,15 +17,15 @@
 
 </ion-content> -->
 <ion-content padding>
-  <ion-list lines="full">
-    <ion-item>
-      <ion-input required type="text" placeholder="Task" [(ngModel)]="tool.task"></ion-input>
+
+    <ion-item color="dark">
+      <ion-input required type="text" placeholder="Herramienta" [(ngModel)]="tool.task"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-input required type="number" placeholder="Priority" [(ngModel)]="tool.priority"></ion-input>
+    <ion-item color="dark">
+      <ion-input required type="text" placeholder="Dirección" [(ngModel)]="tool.priority"></ion-input>
     </ion-item>
-  </ion-list>
-  <ion-button expand="full" (click)="saveTool()">Enviar</ion-button>
+  
+  <ion-button expand="full" (click)="savetool()">Enviar</ion-button>
 
   <ion-fab vertical="bottom " horizontal="end">
     <ion-fab-button color="medium"(click)= "presentActionSheet()">

@@ -14,9 +14,9 @@ export interface Tool {
   providedIn: 'root'
 })
 export class CrudService {
-  private toolsCollection: AngularFirestoreCollection<Tool>;
+  public toolsCollection: AngularFirestoreCollection<Tool>;
  
-  private tools: Observable<Tool[]>;
+  public tools: Observable<Tool[]>;
  
   constructor(db: AngularFirestore) {
     this.toolsCollection = db.collection<Tool>('tools');

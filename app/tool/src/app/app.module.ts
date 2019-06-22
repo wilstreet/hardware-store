@@ -14,13 +14,14 @@ import { AuthenticationService } from './services/authentication.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
-import * as firebase from 'firebase';
+
 import { ReactiveFormsModule } from '@angular/forms';
 
-firebase.initializeApp(environment.firebase);
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -31,7 +32,8 @@ firebase.initializeApp(environment.firebase);
     AngularFireAuthModule,
     ReactiveFormsModule,
     AngularFirestoreModule,
-    AngularFireModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [
     StatusBar,
