@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, NavController } from '@ionic/angular';
 
-
 @Component({
-  selector: 'app-vendedor',
-  templateUrl: './vendedor.page.html',
-  styleUrls: ['./vendedor.page.scss'],
+  selector: 'app-history',
+  templateUrl: './history.page.html',
+  styleUrls: ['./history.page.scss'],
 })
-export class VendedorPage implements OnInit {
+export class HistoryPage implements OnInit {
 
   constructor(public actionSheetController: ActionSheetController, public nav: NavController) { }
   async presentActionSheet() {
@@ -20,7 +19,7 @@ export class VendedorPage implements OnInit {
         role: 'destructive',
         icon: 'albums',
         handler: () => {
-          console.log('Delete clicked');
+          this.nav.navigateForward('/vendedor');
         }
       }, {
         text: 'Ayuda',
@@ -38,7 +37,7 @@ export class VendedorPage implements OnInit {
         text: 'Historial',
         icon: 'filing',
         handler: () => {
-         this.nav.navigateForward('/history')
+          console.log('Favorite clicked');
         }
       }, {
         text: 'Cancel',

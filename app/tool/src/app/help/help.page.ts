@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, NavController } from '@ionic/angular';
-
+import { ActionSheetController, NavController, AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-vendedor',
-  templateUrl: './vendedor.page.html',
-  styleUrls: ['./vendedor.page.scss'],
+  selector: 'app-help',
+  templateUrl: './help.page.html',
+  styleUrls: ['./help.page.scss'],
 })
-export class VendedorPage implements OnInit {
+export class HelpPage implements OnInit {
 
-  constructor(public actionSheetController: ActionSheetController, public nav: NavController) { }
+  constructor(public actionSheetController: ActionSheetController, public nav: NavController, public alert:AlertController) { }
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Acciones',
@@ -20,7 +19,7 @@ export class VendedorPage implements OnInit {
         role: 'destructive',
         icon: 'albums',
         handler: () => {
-          console.log('Delete clicked');
+          this.nav.navigateForward('/vendedor');
         }
       }, {
         text: 'Ayuda',
@@ -38,7 +37,7 @@ export class VendedorPage implements OnInit {
         text: 'Historial',
         icon: 'filing',
         handler: () => {
-         this.nav.navigateForward('/history')
+         this.nav.navigateForward('/history') 
         }
       }, {
         text: 'Cancel',
@@ -51,6 +50,20 @@ export class VendedorPage implements OnInit {
     });
     await actionSheet.present();
   }
+
+  async presentAlert() {
+    const alert = await this.alert.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'Gracias por tú opinion, es muy importante para nosotros.',
+      buttons: ['OK'],
+      cssClass:'alert'
+
+    });
+
+    await alert.present();
+  }
+
 
   ngOnInit() {
   }

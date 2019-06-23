@@ -12,7 +12,9 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },
   { path: 'elemento', loadChildren: './elemento/elemento.module#ElementoPageModule' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: 'home', loadChildren: './home/home.module#HomePageModule' },  { path: 'history', loadChildren: './history/history.module#HistoryPageModule' },
+  { path: 'help', loadChildren: './help/help.module#HelpPageModule' },
+
 
 
 ];
