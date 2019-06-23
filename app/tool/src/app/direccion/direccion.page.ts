@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
-
+import { NavController } from '@ionic/angular'
 @Component({
   selector: 'app-direccion',
   templateUrl: './direccion.page.html',
@@ -8,34 +8,36 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class DireccionPage implements OnInit {
 
-  constructor(public actionSheetController: ActionSheetController) { }
+  constructor(public nav: NavController, public actionSheetController: ActionSheetController) { }
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Acciones',
+      cssClass:'action',
       buttons: [{
         text: 'nuevos pedidos',
         role: 'destructive',
         icon: 'cart',
         handler: () => {
-          console.log('Delete clicked');
+          this.nav.navigateForward('/elemento')
         }
       }, {
         text: 'Mis pedidos',
         icon: 'cart',
+        
         handler: () => {
-          console.log('Share clicked');
+          this.nav.navigateForward('/home')
         }
       }, {
         text: 'Perfil',
         icon: 'contact',
         handler: () => {
-          console.log('Play clicked');
+          this.nav.navigateForward('/dashboard')
         }
       }, {
         text: 'nueva direccion',
         icon: 'map',
         handler: () => {
-          console.log('Favorite clicked');
+          this.nav.navigateForward('/direccion')
         }
       }, {
         text: 'Cancel',

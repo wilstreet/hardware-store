@@ -20,6 +20,9 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
 import { ReactiveFormsModule } from '@angular/forms';
+import * as firebase from 'firebase/app'; 
+
+firebase.initializeApp(environment.firebase);
 
 
 @NgModule({

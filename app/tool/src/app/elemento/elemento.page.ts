@@ -24,30 +24,32 @@ export class ElementoPage implements OnInit {
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Acciones',
+      cssClass:'action',
       buttons: [{
         text: 'nuevos pedidos',
         role: 'destructive',
         icon: 'cart',
         handler: () => {
-          console.log('Delete clicked');
+          this.nav.navigateForward('/elemento')
         }
       }, {
         text: 'Mis pedidos',
         icon: 'cart',
+        
         handler: () => {
-          console.log('Share clicked');
+          this.nav.navigateForward('/home')
         }
       }, {
         text: 'Perfil',
         icon: 'contact',
         handler: () => {
-          console.log('Play clicked');
+          this.nav.navigateForward('/dashboard')
         }
       }, {
         text: 'nueva direccion',
         icon: 'map',
         handler: () => {
-          console.log('Favorite clicked');
+          this.nav.navigateForward('/direccion')
         }
       }, {
         text: 'Cancel',
@@ -92,12 +94,13 @@ export class ElementoPage implements OnInit {
     if (this.toolId) {
       this.toolService.updateTool(this.tool, this.toolId).then(() => {
         loading.dismiss();
-        this.nav.goBack('home');
+       this.nav.navigateForward('/home');
       });
     } else {
       this.toolService.addTool(this.tool).then(() => {
         loading.dismiss();
-        this.nav.goBack('home');
+       this.nav.navigateForward('/home');
+        
       });
     }
   }

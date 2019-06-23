@@ -6,8 +6,8 @@ import { map } from 'rxjs/operators';
 export interface Tool {
   id?: string;
   task: string;
-  priority: number;
-  createdAt: number;
+  priority:string;
+  createdAt:number;
 }
 
 @Injectable({

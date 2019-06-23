@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-vendedor',
@@ -8,11 +9,13 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class VendedorPage implements OnInit {
 
-  constructor(public actionSheetController: ActionSheetController) { }
+  constructor(public actionSheetController: ActionSheetController, public nav: NavController) { }
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Acciones',
+      cssClass:'ve',
       buttons: [{
+     
         text: 'Inicio',
         role: 'destructive',
         icon: 'albums',
@@ -29,7 +32,7 @@ export class VendedorPage implements OnInit {
         text: 'Perfil',
         icon: 'contact',
         handler: () => {
-          console.log('Play clicked');
+          this.nav.navigateForward('/dashboard')
         }
       }, {
         text: 'Historial',
