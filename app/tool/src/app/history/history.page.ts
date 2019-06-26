@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, NavController } from '@ionic/angular';
+import { Tool, CrudService } from '../services/crud.service';
 
 @Component({
   selector: 'app-history',
@@ -7,8 +8,9 @@ import { ActionSheetController, NavController } from '@ionic/angular';
   styleUrls: ['./history.page.scss'],
 })
 export class HistoryPage implements OnInit {
+  tools: Tool[];
 
-  constructor(public actionSheetController: ActionSheetController, public nav: NavController) { }
+  constructor(public actionSheetController: ActionSheetController, public nav: NavController, private toolService: CrudService, ) { }
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Acciones',
@@ -52,6 +54,13 @@ export class HistoryPage implements OnInit {
   }
 
   ngOnInit() {
+    this.toolService.gettools().subscribe(res => {
+      this.tools = res;
+    });
   }
-
+ 
+  remove(item: { id: string; }) {
+    this.toolService.removeTool(item.id);
+  }
 }
+
