@@ -2,7 +2,7 @@
 <ion-content padding>
   <form class="form" [formGroup]="validations_form"  (ngSubmit)="loginUser(validations_form.value)">
  
-    <ion-item color="dark">
+    <ion-item color="light">
       <ion-label  position="floating" color="danger">Email</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
     </ion-item>
@@ -14,7 +14,7 @@
       </ng-container>
     </div>
  
-    <ion-item color="dark">
+    <ion-item color="light">
       <ion-label  position="floating" color="danger">Contraseña</ion-label>
       <ion-input type="password" formControlName="password" class="form-controll" placeholder=""></ion-input>
     </ion-item>
@@ -26,7 +26,7 @@
       </ng-container>
     </div>
  
-    <ion-button  class="submit-btn" type="submit"  [disabled]="!validations_form.valid"> Iniciar sesión</ion-button>
+    <ion-button colo="dark" class="submit-btn" type="submit"  [disabled]="!validations_form.valid"> Iniciar sesión</ion-button>
  
     <label class="error-message">{{errorMessage}}</label>
   </form>
