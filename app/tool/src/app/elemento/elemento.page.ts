@@ -87,7 +87,7 @@ export class ElementoPage implements OnInit {
   async savetool() {
  
     const loading = await this.loadingController.create({
-      message: 'Saving Tool..'
+      message: 'Enviando pedido'
     });
     await loading.present();
  
